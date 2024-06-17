@@ -5,6 +5,7 @@ import './App.css'
 import Welcome from './WelcomePage/welcome.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './HomePage.jsx/Home.jsx'
+import HomePage from './HomePage.jsx/HomePage.jsx'
 
 function App() {
 
@@ -21,6 +22,10 @@ function App() {
           <Route
             path='/home'
             element= {<Home />}
+          />
+           <Route
+            path='/homepage'
+            element= {<HomePage />}
           />
           
         </Routes>
