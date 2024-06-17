@@ -1,4 +1,4 @@
-
+import './Home.css'
     
     //'X-API-KEY':'0QVtcP1asLfGN4k7lsYFfgbX'
     //https://tonapi.nftscan.com/api/ton/statistics/ranking/trade?time=15m&sort_field=sales&sort_direction=desc
@@ -45,14 +45,18 @@ const NFTData = () => {
         <div>
             {data.length > 0 ? (
                 data.map(item => (
-                    <div key={item.contract_address}>
+                    <div key={item.contract_address} className='nft_box'>
                         <h2>{item.contract_name}</h2>
-                        <img src={item.logo_url} alt={item.contract_name} />
+                        <div>
+                        <img src={item.logo_url} alt={item.contract_name} className='img'/>
+                        </div>
+                        <div>
                         <p>Lowest Price: {item.lowest_price}</p>
                         <p>Average Price: {item.average_price}</p>
                         <p>Highest Price: {item.highest_price}</p>
                         <p>Volume: {item.volume}</p>
                         <p>Sales: {item.sales}</p>
+                        </div>
                         {/* Aggiungi altri campi se necessario */}
                     </div>
                 ))

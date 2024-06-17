@@ -1,0 +1,11 @@
+.nft_box {
+    border: solid white 1px;
+    display: flex;
+    padding: 2px;
+    flex-direction: column;
+    max-height: 50;
+}
+
+.img {
+    width: 100px;
+}
