@@ -3,13 +3,29 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Welcome from './WelcomePage/welcome.jsx'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Home from './HomePage.jsx/Home.jsx'
 
 function App() {
 
 
   return (
     <>
-      <Welcome />
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path='/'
+            element= {<Welcome />} 
+          />
+
+          <Route
+            path='/home'
+            element= {<Home />}
+          />
+          
+        </Routes>
+      
+      </BrowserRouter>
     </>
   )
 }
