@@ -1,4 +1,4 @@
-import './Home.css'
+import "./Home.css"
     
     //'X-API-KEY':'0QVtcP1asLfGN4k7lsYFfgbX'
     //https://tonapi.nftscan.com/api/ton/statistics/ranking/trade?time=15m&sort_field=sales&sort_direction=desc
@@ -15,7 +15,7 @@ const NFTData = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('https://tonapi.nftscan.com/api/ton/statistics/ranking/trade?time=15m&sort_field=sales&sort_direction=desc', {
+                const response = await fetch('https://tonapi.nftscan.com/api/ton/statistics/ranking/trade?time=12h&sort_field=sales&sort_direction=desc', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ const NFTData = () => {
         };
 
         fetchData();
-    }, []);
+    }, ['https://tonapi.nftscan.com/api/ton/statistics/ranking/trade?time=12h&sort_field=sales&sort_direction=desc']);
 
     if (loading) return <p>Caricamento...</p>;
     if (error) return <p>Errore nel caricamento dei dati: {error.message}</p>;
@@ -54,8 +54,10 @@ const NFTData = () => {
                         <p>Lowest Price: {item.lowest_price}</p>
                         <p>Average Price: {item.average_price}</p>
                         <p>Highest Price: {item.highest_price}</p>
-                        <p>Volume: {item.volume}</p>
+                        <p>Volume: {item.volume}</p> 
+                        <p> Volume Change {item.volume_change}</p>
                         <p>Sales: {item.sales}</p>
+                    
                         </div>
                         {/* Aggiungi altri campi se necessario */}
                     </div>
