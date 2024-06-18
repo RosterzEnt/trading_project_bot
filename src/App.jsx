@@ -6,13 +6,12 @@ import Welcome from './WelcomePage/welcome.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './HomePage.jsx/Home.jsx'
 import HomePage from './HomePage.jsx/HomePage.jsx'
+import { Analytics } from "@vercel/analytics/react"
 
-const telegram = window.Telegram.WebApp
+
 function App() {
 
-  useEffect(() => {
-    telegram.ready()
-  })
+
 
   return (
     <>
@@ -35,6 +34,7 @@ function App() {
         </Routes>
       
       </BrowserRouter>
+      <Analytics />
     </>
   )
 }
